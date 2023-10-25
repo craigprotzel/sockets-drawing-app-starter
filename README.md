@@ -44,7 +44,7 @@ socket.on('connect', () => {
 });
 ```
 
-- STEP 5:	Client-Side **‘Emit’** Event - What do you send? Use p5!
+- STEP 5:	Client-Side **‘Emit’** Event - What does a client send to the server? Use p5!
 ```
 function mouseMoved() {
   //Grab mouse position
@@ -58,7 +58,7 @@ function mouseMoved() {
 }
 ```
 
-- STEP 6:	Server-Side **‘On’** Event
+- STEP 6:	Server-Side **‘On’** Event - What does the server receive from a client?
 ```
 //Listen for a message named 'data' from a client
 socket.on('data', (data) => {
@@ -72,7 +72,7 @@ socket.on('data', (data) => {
 }
 ```
 
-- STEP 7:	Server-Side **‘Emit’** Event - How to share?
+- STEP 7:	Server-Side **‘Emit’** Event - How does the server share updates with everyone?
 ```
 //Send data to ALL clients, including this one
 io.emit('data', data);
@@ -84,7 +84,7 @@ io.emit('data', data);
 // socket.emit('data', data);
 ```
 
-- STEP 8:	Client Side **‘On’** Event - What do you need?
+- STEP 8:	Client Side **‘On’** Event - What does everyone need to receive updates from the server?
 ```
 //Listen for a message named 'data' from the server
 socket.on('data', function(obj) {
