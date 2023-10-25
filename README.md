@@ -6,6 +6,8 @@
 
 ### Code Steps - Included
 - STEP 1:	Client-Side Setup - HTML, CSS, & JS
+  - Make the socket.io library is included in the HTML
+  - Need the following HTML `<script src="/socket.io/socket.io.js"></script>`
 - STEP 2:	Server-Side Setup - Express & HTTP Server
 
 ### Code Steps - To Do
