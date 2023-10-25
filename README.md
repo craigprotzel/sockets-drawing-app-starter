@@ -5,13 +5,13 @@
 - Run `npm install` to load dependencies listed in package.json
 
 ### Code Steps - Included
-- STEP 1:	Client-Side Setup - HTML, CSS, & JS
+- **STEP 1:**	Client-Side Setup - HTML, CSS, & JS
   - Make sure the socket.io library is included in the HTML
   - Need the following HTML `<script src="/socket.io/socket.io.js"></script>`
-- STEP 2:	Server-Side Setup - Express, HTTP Server & .env port
+- **STEP 2:**	Server-Side Setup - Express, HTTP Server & .env port
 
 ### Code Steps - To Do
-- STEP 3:	Server-Side Socket.io Initialization + Connection
+- **STEP 3:**	Server-Side Socket.io Initialization + Connection
 ```
 //Initialize socket.io
 let io = require("socket.io");
@@ -32,7 +32,7 @@ io.on("connection", (socket) => {
 });
 ```
 
-- STEP 4:	Client-Side Socket.io Initialization + Connection
+- **STEP 4:**	Client-Side Socket.io Initialization + Connection
 ```
 //Open and connect socket
 let socket = io();
@@ -44,7 +44,7 @@ socket.on('connect', () => {
 });
 ```
 
-- STEP 5:	Client-Side **‘Emit’** Event - What does a client send to the server? Use p5!
+- **STEP 5:**	Client-Side **‘Emit’** Event - What does a client send to the server? Use p5!
 ```
 function mouseMoved() {
   //Grab mouse position
@@ -58,7 +58,7 @@ function mouseMoved() {
 }
 ```
 
-- STEP 6:	Server-Side **‘On’** Event - What does the server receive from a client?
+- **STEP 6:**	Server-Side **‘On’** Event - What does the server receive from a client?
 ```
 //Listen for a message named 'data' from a client
 socket.on('data', (data) => {
@@ -72,7 +72,7 @@ socket.on('data', (data) => {
 }
 ```
 
-- STEP 7:	Server-Side **‘Emit’** Event - How does the server share updates with everyone?
+- **STEP 7:**	Server-Side **‘Emit’** Event - How does the server share updates with everyone?
 ```
 //Send data to ALL clients, including this one
 io.emit('data', data);
@@ -84,7 +84,7 @@ io.emit('data', data);
 // socket.emit('data', data);
 ```
 
-- STEP 8:	Client Side **‘On’** Event - What does everyone need to receive updates from the server?
+- **STEP 8:**	Client Side **‘On’** Event - What does everyone need to receive updates from the server?
 ```
 //Listen for a message named 'data' from the server
 socket.on('data', function(obj) {
