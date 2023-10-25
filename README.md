@@ -44,7 +44,7 @@ socket.on('connect', () => {
 });
 ```
 
-- STEP 5:	Client-Side **‘Emit’** Event - What do you send?
+- STEP 5:	Client-Side **‘Emit’** Event - What do you send? Use p5!
 ```
 function mouseMoved() {
   //Grab mouse position
