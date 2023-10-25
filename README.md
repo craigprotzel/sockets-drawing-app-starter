@@ -8,7 +8,7 @@
 - STEP 1:	Client-Side Setup - HTML, CSS, & JS
   - Make the socket.io library is included in the HTML
   - Need the following HTML `<script src="/socket.io/socket.io.js"></script>`
-- STEP 2:	Server-Side Setup - Express & HTTP Server
+- STEP 2:	Server-Side Setup - Express, HTTP Server & .env port
 
 ### Code Steps - To Do
 - STEP 3:	Server-Side Socket.io Initialization + Connection
