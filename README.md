@@ -138,9 +138,12 @@ function drawEllipse(obj) {
 ### PART 5 - CHANGE CLIENT DATA
 19. **CLIENT** - Assign a random fill color and ellipse size to the client
 ```
+//In global scope
 let myRed, myGreen, myBlue;
 let myDiameter;
 ```
+```
+//Inside setup
 //Generate random fill values
 myRed = random(0,255);
 myGreen = random(0,255)
