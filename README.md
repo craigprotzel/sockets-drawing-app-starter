@@ -131,7 +131,7 @@ function drawEllipse(obj) {
 }
 ```
 
-### PART 5 - UPDATE CLIENT DATA
+### PART 5 - CHANGE CLIENT DATA
 19. **CLIENT** - In `setup()`, assign a random fill color and ellipse size to the client
 ```
 //Generate random fill values
