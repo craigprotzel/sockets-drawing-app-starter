@@ -70,16 +70,20 @@ socket.on('connect', () => {
 ### PART 3 - SEND A MESSAGE TO THE SERVER
 13. **CLIENT** - Use p5 to grab the mouse position
 ```
+function setup(){
+    createCanvas(windowWidth, windowHeight);
+}
+
 function mouseMoved() {
   //Grab mouse position
   let mouseData = { x: mouseX, y: mouseY };
 
   //Draw yourself? Wait for server?
   fill(0);
-  ellipse(mouseX, mouseY 10, 10);
+  ellipse(mouseX, mouseY, 10, 10);
 }
 ```
-14. **CLIENT** - Send mouse the mouse data object to the server. Use `.emit()`
+14. **CLIENT** - Inside `mouseMoved()` Send mouse the mouse data object to the server. Use `.emit()`
 ```
 //Send mouse data object to the server
 socket.emit('message', mouseData);
@@ -132,15 +136,18 @@ function drawEllipse(obj) {
 ```
 
 ### PART 5 - CHANGE CLIENT DATA
-19. **CLIENT** - In `setup()`, assign a random fill color and ellipse size to the client
+19. **CLIENT** - Assign a random fill color and ellipse size to the client
+```
+let myRed, myGreen, myBlue;
+let myDiameter;
 ```
 //Generate random fill values
-let myRed = random(0,255);
-let myGreen = random(0,255)
-let myBlue = random(0,255);
+myRed = random(0,255);
+myGreen = random(0,255)
+myBlue = random(0,255);
 
 //Generate random ellipse size
-let myDiameter = random(5,25);
+myDiameter = random(5,50);
 ```
 20. **CLIENT** - Update the mouse data being sent to the server
 ```
@@ -156,6 +163,7 @@ let mouseData = {
 21. **CLIENT** - Update the `drawEllipse()` function
 ```
 fill(obj.r, obj.g, obj.b);
+noStroke();
 ellipse(obj.x, obj.y, obj.d, obj.d);
 ```
 
@@ -171,6 +179,7 @@ let port = process.env.PORT || 3000;
 ```
 ### PART 7 - PUSH TO GITHUB USING GIT
 24. Create a local git repository
+- `git status -s`
 - `git init`
 - `git status -s`
 - `git add -A`
@@ -180,7 +189,7 @@ let port = process.env.PORT || 3000;
 25. Create a remote git repository on Github
 - Default is `Public`
 - No need to generate a `README.md`, `.gitignore` or a license since we already have them. 
-- Once created, we will use the **"or push an existing repository from the command line"** option. See Step #25.
+- Once created, we will use the **"or push an existing repository from the command line"** option. See next Step.
 
 26. Connect local git repo to remote Github repo
 - `git remote add origin <url>`
