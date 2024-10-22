@@ -4,11 +4,11 @@ Socekt.io - Drawing App Workshop
 ### Goals:
 - Allow mulitiple users to share data with each other in real time
 - Understand data flow  
--- 0. Client establishes socket connection with server  
-- (1) Client sends message to server - `.emit`  
-(2) Server receives message from client - `.on`  
-(3) Server sends client's message to ALL clients - `.emit()`  
-(4) ALL clients receive message from server - `.on()`  
+- - Client establishes socket connection with server  
+- Client sends message to server - `.emit`  
+  Server receives message from client - `.on`  
+  Server sends client's message to ALL clients - `.emit()`  
+  ALL clients receive message from server - `.on()`  
 
 
 ### PART 1 - SETUP
