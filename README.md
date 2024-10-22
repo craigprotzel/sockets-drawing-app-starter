@@ -1,10 +1,22 @@
-## Socekt.io - Drawing App Starter
+Socekt.io - Drawing App Workshop
+--------------------------------
 
-### Local Setup
-- `cd` via the commnad line to the project folder
-- Run `npm install` to load dependencies listed in package.json
+### Goals:
+- Allow mulitiple users to share data with each other in real time
+- Understand data flow
+(0) Client establishes a socket connection with the server
+(1) Client sends message to server - `,emit`
+(2) Server receives message from client - `.on`
+(3) Server sends client's message to ALL clients - `.emit()`
+(4) ALL clients receive message from server - `.on()`
 
-### Code Steps - Included
+
+### PART 1 - SETUP
+1. Open Command Prompt and `cd` into the folder with the code files
+2. Run `npm install` to load dependencies listed in `package.json`
+3. Review starter code
+-- 
+
 - **STEP 1:**	Client-Side Setup - HTML, CSS, & JS
   - Make sure the socket.io library is included in the HTML
   - Need the following HTML `<script src="/socket.io/socket.io.js"></script>`
