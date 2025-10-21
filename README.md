@@ -1,7 +1,7 @@
 Socekt.io - Drawing App Workshop
 --------------------------------
 
-### Goals:
+### GOALS:
 - Allow mulitiple users to share data with each other in real time
 - Understand data flow  
   - Client establishes socket connection with server  
@@ -9,7 +9,7 @@ Socekt.io - Drawing App Workshop
   - Server receives message from client - `.on()`  
   - Server sends the message to **ALL** clients - `.emit()`  
   - **ALL** clients receive the message from server - `.on()`
-- Deploy application to Glitch using git and Github  
+- Push application to Github, Deploy on Render  
 
 ### PART 1 - SETUP
 1. Download this entire repository
@@ -109,10 +109,10 @@ socket.on('message', (data) => {
 //Send data to ALL clients, including this one
 io.emit('message-share', data);
 
-//Send data to ALL other clients but the sender
+//Send data to ALL other clients EXCEPT the sender
 // socket.broadcast.emit('message-share', data);
 
-//Send the data just to the sender
+//Send the data ONLY to the sender
 // socket.emit('message-share', data);
 ```
 17. **CLIENT** - Receive the shared message. Use `.on()`.
@@ -123,7 +123,7 @@ socket.on('message-share', (data) => {
 
 });
 ```
-18. **CLIENT** - Draw an ellipse to the canvas.
+18. **CLIENT** - Draw an ellipse to the canvas
 ```
 drawEllipse(data);
 ```
@@ -169,37 +169,3 @@ fill(obj.r, obj.g, obj.b);
 noStroke();
 ellipse(obj.x, obj.y, obj.d, obj.d);
 ```
-
-### PART 6 - PREPARE APP FOR GLITCH
-22. Check `package.json` for `start` command
-```
-"start": "node index.js" //inside "scripts"
-```
-23. Check `index.js` for `port` variable
-```
-//Set the env variable for the port:
-let port = process.env.PORT || 3000;
-```
-### PART 7 - PUSH TO GITHUB USING GIT
-24. Create a local git repository
-- `git status -s`
-- `git init`
-- `git status -s`
-- `git add -A`
-- `git status -s`
-- `git commit -m"Initial commit"`
-
-25. Create a remote git repository on Github
-- Default is `Public`
-- No need to generate a `README.md`, `.gitignore` or a license since we already have them. 
-- Once created, we will use the **"or push an existing repository from the command line"** option. See next Step.
-
-26. Connect local git repo to remote Github repo
-- `git remote add origin <url>`
-- `git branch -M main`
-- `git push -u origin main`
-
-### PART 8 - DEPLOY TO GLITCH
-27. On Gtihub, copy https `.git` url from Github
-28. On Glitch, create a new project using "Import from Github". Paste in `.git` url from Github
-
