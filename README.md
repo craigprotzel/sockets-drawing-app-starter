@@ -24,7 +24,7 @@ Socekt.io - Drawing App Workshop
 let http = require("http");
 let server = http.createServer(app);
 ```
-6. **SERVER** - Update the `.listen()` line of code to user `server` instead of `app`
+6. **SERVER** - Update the `.listen()` line of code to use `server` instead of `app`
 ```
 server.listen()
 ```
